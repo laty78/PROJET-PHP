@@ -4,14 +4,14 @@ Besoin du client : application fonctionnel sur la mixité.
 UML:
 
 utilisateur: 
-#id 
+## #id 
 email-unique 
 mot de passe 
 pseudo-unique 
 clé
 
 Bloc: 
-#id 
+## #id 
 titre 
 media-img
 media-video
@@ -20,7 +20,7 @@ date
 format-Enum
 
 Rôle:
-#id
+## #id
 nom
 
 Bpml:  sénarios Possible:
