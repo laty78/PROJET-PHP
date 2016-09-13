@@ -1,0 +1,13 @@
+{
+    "name": "root/projet-php",
+    "require": {
+        "behat/behat": "^3.1",
+        "behat/gherkin": "^4.4"
+    },
+    "authors": [
+        {
+            "name": "RonaldM-",
+            "email": "ronald.marcel.mr@gmail.com"
+        }
+    ]
+}
