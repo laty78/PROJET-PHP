@@ -1,4 +1,4 @@
-# PROJET-PHP
+/home/pcapprenant19/Bureau/PROJET-PHP/scenario projet php/user_lambda_720.png# PROJET-PHP
 Dans un premier temps nous avons etudié le besoin du client, comprendre le BPML et l'UML.
 Besoin du client : application fonctionnel sur la mixité.
 UML:
@@ -24,5 +24,6 @@ Rôle:
 nom
 
 Bpml:  sénarios Possible:
-![visiteur lambda](https:///home/pcapprenant19/Musique/user_lambda_720.png "visiteur lambda")
-
+![visiteur lambda](/home/pcapprenant19/Bureau/PROJET-PHP/scenario projet php/user_lambda_720.png "visiteur lambda")
+![visiteur lambda](/home/pcapprenant19/Bureau/PROJET-PHP/scenario projet php/user_lambda_720.png "visiteur lambda")
+![visiteur lambda](/home/pcapprenant19/Bureau/PROJET-PHP/scenario projet php/user_lambda_720.png "visiteur lambda")
