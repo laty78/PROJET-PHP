@@ -144,7 +144,7 @@ Feature: A moderator registers a block
         When I click on "update block"
         And I enter a valid "title"
         And I enter a valid "media"
-        And I enter a valid "forunvalid "at"
+        And I enter a valid "format"
         And the block doesn't exist
         Then I get a question "This block doesn't exit anymore, do you want to create it?"
         

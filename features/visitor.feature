@@ -5,7 +5,7 @@ Feature: A visitor visit the app
         When I click on a "block"
         Then The block displays on the whole page
 
-    Scenario: 2. a visitor flter via media type
+    Scenario: 2. a visitor filter via media type
         Given I am a "vistor"
         When I click on "filter"
         And I choose "media type: video"

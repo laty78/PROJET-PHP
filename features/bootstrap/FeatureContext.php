@@ -22,7 +22,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      /**
      * @Given I am an :arg1
      */
-     /**
+    /**
      * @Given I am :arg1
      */
     public function iAm($arg1)
@@ -103,9 +103,9 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @When I enter a unused :arg1
+     * @Then I get a question :arg1
      */
-    public function iEnterAUnused($arg1)
+    public function iGetAQuestion($arg1)
     {
         throw new PendingException();
     }
@@ -122,14 +122,6 @@ class FeatureContext implements Context, SnippetAcceptingContext
      * @Then I create a admin
      */
     public function iCreateAAdmin()
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When I enter a used :arg1
-     */
-    public function iEnterAUsed($arg1)
     {
         throw new PendingException();
     }
@@ -162,14 +154,6 @@ class FeatureContext implements Context, SnippetAcceptingContext
      * @When the admin doesn't exist
      */
     public function theAdminDoesnTExist()
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then I get a question :arg1
-     */
-    public function iGetAQuestion($arg1)
     {
         throw new PendingException();
     }
@@ -330,6 +314,69 @@ class FeatureContext implements Context, SnippetAcceptingContext
      * @Then I get video blocks
      */
     public function iGetVideoBlocks()
+    {
+        throw new PendingException();
+    }
+    /**
+     * @Then I create a block
+     */
+    public function iCreateABlock()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When I enter a unvalid :arg1
+     */
+    public function iEnterAUnvalid($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given I am  :arg1
+     */
+    public function iAm2($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When the block exists
+     */
+    public function theBlockExists()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I update a block
+     */
+    public function iUpdateABlock()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When the block doesn't exist
+     */
+    public function theBlockDoesnTExist()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I deleted the block
+     */
+    public function iDeletedTheBlock()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When I enter an used :arg1
+     */
+    public function iEnterAnUsed($arg1)
     {
         throw new PendingException();
     }
