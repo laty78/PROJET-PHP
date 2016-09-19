@@ -6,21 +6,28 @@ use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Entity\User;
-
+use Entity\Champ;
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext implements Context, SnippetAcceptingContext
 {
+    
+    
+        
+    
     /**
      * @Given I am an :arg1
      */
     public function iAmAn($arg1)
     {
-        $this->user = new User();
-        $this->user->setPseudo("Name");
+        $user = new User('chat0','felix');
+        $user->connect();
+        
+        /*$this->user->setPseudo("Name");
         $this->user->setMdp("password");
-        $this->user->setRole($arg1);
+        $this->user->setRole($arg1);*/
+        
     }
 
     /**
@@ -28,7 +35,10 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function jeSaisiDansLeChamp($arg1, $arg2)
     {
-        throw new PendingException();
+        $this->champ = new Champ();
+        $this->champ->setLabel($arg1);
+        $this->champ->setContent($arg2);
+        
     }
 
     /**
@@ -59,6 +69,13 @@ class FeatureContext implements Context, SnippetAcceptingContext
      * @Then Mon nouveau post est présent
      */
     public function monNouveauPostEstPresent()
+    {
+        throw new PendingException();
+    }
+    /**
+     * @Then Je me connect à mon compte
+     */
+    public function jeMeConnectAMonCompte()
     {
         throw new PendingException();
     }
