@@ -5,16 +5,18 @@ Feature: A SU registers an admin
     Scenario: A SU registers an admin
         Given I am "SU"
         When I click on "add admin"
-        And I enter a unused "username"
+        And I enter an unused "username"
         And I enter an unused "email"
         Then I create a admin
 
     Scenario: A SU registrers an admin with a used username or a used email
         Given I am "SU"
         When I click on "add admin"
-        And I enter a used "username"
-        And I enter a used "email"
+        And I enter an used "username"
+        And I enter an used "email"
         Then I get an error
+
+
 
     Scenario: A SU edit an admin existant
         Given I am "SU"
@@ -32,13 +34,31 @@ Feature: A SU registers an admin
         And the admin doesn't exist
         Then I get a question "This admin doesn't exist anymore, do you want to create it?"
 
-    Scenario: A SU edit a existant admin with an unvalid username or email
+    Scenario: A SU edit a existant admin with an unvalid username and email
         Given I am "SU"
         When I click on "edit admin"
-        And I enter a used "username"
-        And I enter a used "email"
+        And I enter an used "username"
+        And I enter an used "email"
         And the admin exists
         Then I get an error
+        
+    Scenario: A SU edit a existant admin with an unvalid username
+        Given I am "SU"
+        When I click on "edit admin"
+        And I enter an used "username"
+        And I enter an unused "email"
+        And the admin exists
+        Then I get an error
+        
+    Scenario: A SU edit a existant admin with an unvalid email
+        Given I am "SU"
+        When I click on "edit admin"
+        And I enter an unused "username"
+        And I enter an used "email"
+        And the admin exists
+        Then I get an error
+
+
 
     Scenario: A SU delete a existant admin
         Given I am "SU"

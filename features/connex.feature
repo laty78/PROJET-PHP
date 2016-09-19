@@ -22,6 +22,8 @@ Feature: A visitor connect
         And I enter an unvalid "password"
         Then I get an error "Wrong password"
 
+
+
     Scenario: A visitor forgot his password
         Given I am "visitor"
         And I click on "Password Forgotten"
