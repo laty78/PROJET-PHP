@@ -1,26 +1,12 @@
-  Feature: Admin create a post
+  Feature: Un admin créer un post
 
-Scenario: Un admin saisi un bloc valide
+Scenario: Un admin créer un post pour envoyer une image de petite taille
   Given I am an "admin"
-  When I click on the button "Create a post"
-    And Je saisi un "title" valide
-    And Je saisi un "media" valide
-    And Je saisi un "type de media" valide
-    And Je saisi un "format" valide
+  When Je saisi "Nom de l'image" dans le champ "title"
+    And Je saisi "url de l'image" dans le champ "media"
+    And Je saisi "image" dans le champ "type de media"
+    And Je saisi "1" dans le champ "format"
     And Je clique sur "Envoyer"
-  Then Un nouveau bloc est créé dans la BDD
+  Then Un nouveau post est créé dans la BDD
     And Retour à l'accueil
-    And mon nouveau bloc est présent
-
-Scenario: Un admin saisi un bloc non valide
-  Given I am an "admin"
-  When I click on the button "Create a post"
-    And Je saisi "tous les champs"
-    And Je saisi un "title" non valide
-    And Je saisi un "media" non valide
-    And Je saisi un "type de media" non valide
-    And Je saisi un "format" non valide
-    And Je clique sur "Envoyer"
-  Then Le bloc n'est pas créé dans la BDD
-    And On reste sur la même page
-    And Un message erreur est affiché
+    And Mon nouveau post est présent

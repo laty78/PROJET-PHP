@@ -10,6 +10,7 @@
     <filter>
         <whitelist>
             <directory>./src/Behat/</directory>
+            <directory>./src/Entity/</directory>
         </whitelist>
     </filter>
 </phpunit>

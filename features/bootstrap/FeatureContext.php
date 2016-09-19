@@ -5,53 +5,30 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use Entity\User;
+
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext implements Context, SnippetAcceptingContext
 {
     /**
-     * Initializes context.
-     *
-     * Every scenario gets its own context instance.
-     * You can also pass arbitrary arguments to the
-     * context constructor through behat.yml.
-     */
-    public function __construct()
-    {
-        $this->user = new User();
-        $this->user->setPseudo("Toto");
-        
-    }
-    
-    /**
      * @Given I am an :arg1
      */
     public function iAmAn($arg1)
     {
+        $this->user = new User();
+        $this->user->setPseudo("Name");
+        $this->user->setMdp("password");
         $this->user->setRole($arg1);
-        
-        //throw new PendingException();
     }
 
     /**
-     * @When I click on the button :arg1
+     * @When Je saisi :arg1 dans le champ :arg2
      */
-    public function iClickOnTheButton($arg1)
+    public function jeSaisiDansLeChamp($arg1, $arg2)
     {
-        if(true){
-            throw new PendingException("Error unknown name");
-        }
-            
-            
-    }
-
-    /**
-     * @When Je saisi un :arg1 valide
-     */
-    public function jeSaisiUnValide($arg1)
-    {
-        //throw new PendingException();
+        throw new PendingException();
     }
 
     /**
@@ -59,15 +36,15 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function jeCliqueSur($arg1)
     {
-        //throw new PendingException();
+        throw new PendingException();
     }
 
     /**
-     * @Then Un nouveau bloc est créé dans la BDD
+     * @Then Un nouveau post est créé dans la BDD
      */
-    public function unNouveauBlocEstCreeDansLaBdd()
+    public function unNouveauPostEstCreeDansLaBdd()
     {
-        //throw new PendingException();
+        throw new PendingException();
     }
 
     /**
@@ -75,55 +52,16 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function retourALAccueil()
     {
-        //throw new PendingException();
+        throw new PendingException();
     }
 
     /**
-     * @Then mon nouveau bloc est présent
+     * @Then Mon nouveau post est présent
      */
-    public function monNouveauBlocEstPresent()
+    public function monNouveauPostEstPresent()
     {
-        //throw new PendingException();
+        throw new PendingException();
     }
 
-    /**
-     * @When Je saisi :arg1
-     */
-    public function jeSaisi($arg1)
-    {
-        //throw new PendingException();
-    }
-
-    /**
-     * @When Je saisi un :arg1 non valide
-     */
-    public function jeSaisiUnNonValide($arg1)
-    {
-       // throw new PendingException();
-    }
-
-    /**
-     * @Then Le bloc n'est pas créé dans la BDD
-     */
-    public function leBlocNEstPasCreeDansLaBdd()
-    {
-       // throw new PendingException();
-    }
-
-    /**
-     * @Then On reste sur la même page
-     */
-    public function onResteSurLaMemePage()
-    {
-       // throw new PendingException();
-    }
-
-    /**
-     * @Then Un message erreur est affiché
-     */
-    public function unMessageErreurEstAffiche()
-    {
-       // throw new PendingException();
-    }
 
 }
