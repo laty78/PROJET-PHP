@@ -82,11 +82,10 @@ Feature: SU create a SU
 
 
 
-<!--    Scenario: A SU delete himself
+    Scenario: A SU delete its count
         Given I am "SU"
-        When I click on "delete SU himself"
+        When I click on "delete SU count"
         And the SU exists
-        Then I get an error message
--->
+        Then I get an error message "You can't delete your count"
         
      
