@@ -18,41 +18,9 @@ class FeatureContext implements Context, SnippetAcceptingContext
      * You can also pass arbitrary arguments to the
      * context constructor through behat.yml.
      */
-    /**
-     * @Given I am a visitor
-     */
     
     public function __construct()
     {
-    }
-    
-    public function iAmAVisitor()
-    {
-        $iAmAVisitor -> AmAVisitor = new iAmAVisitor();
-    }
-
-    /**
-     * @When I click on a :arg1
-     */
-    public function iClickOnA($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then The block displays on the whole page
-     */
-    public function theBlockDisplaysOnTheWholePage()
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Given I am a vistor
-     */
-    public function iAmAVistor()
-    {
-        throw new PendingException();
     }
 
     /**
@@ -72,30 +40,6 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @Then I get video blocks
-     */
-    public function iGetVideoBlocks()
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Given I am a visitor not registred
-     */
-    public function iAmAVisitorNotRegistred()
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When I enter a :arg1 or :arg2
-     */
-    public function iEnterAOr($arg1, $arg2)
-    {
-        throw new PendingException();
-    }
-
-    /**
      * @When I enter a :arg1
      */
     public function iEnterA($arg1)
@@ -107,30 +51,6 @@ class FeatureContext implements Context, SnippetAcceptingContext
      * @Then I get an error :arg1
      */
     public function iGetAnError($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Given I am a registred visitor
-     */
-    public function iAmARegistredVisitor()
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When I enter my :arg1 or :arg2
-     */
-    public function iEnterMyOr($arg1, $arg2)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When I enter my :arg1
-     */
-    public function iEnterMy($arg1)
     {
         throw new PendingException();
     }
