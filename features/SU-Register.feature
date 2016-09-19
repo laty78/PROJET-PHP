@@ -82,11 +82,11 @@ Feature: SU create a SU
 
 
 
-    Scenario: A SU delete himself
+<!--    Scenario: A SU delete himself
         Given I am "SU"
         When I click on "delete SU himself"
         And the SU exists
         Then I get an error message
-
+-->
         
      
