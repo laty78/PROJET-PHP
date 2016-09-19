@@ -79,3 +79,14 @@ Feature: SU create a SU
         When I click on "delete SU"
         And the SU doesn't exist
         Then I get an error
+
+
+
+    Scenario: A SU delete himself
+        Given I am "SU"
+        When I click on "delete SU himself"
+        And the SU exists
+        Then I get an error message
+
+        
+     
