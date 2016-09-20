@@ -187,7 +187,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      * @Then I updated an admin
      */
     public function iUpdatedAnAdmin()
-    {
+   {
         throw new PendingException();
     }
 
