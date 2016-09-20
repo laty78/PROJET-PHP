@@ -7,11 +7,5 @@ Feature: A visitor visit the app
 
     Scenario: A visitor filter via media type
         Given I am a "vistor"
-        When I filter via <type>
-        Then I get <result> blocks
-        
-    Examples:
-        | type  | result |
-        | video | video  |
-        | image | image  |
-        | sound | sound  |
+        When I filter via video
+        Then I get video blocks

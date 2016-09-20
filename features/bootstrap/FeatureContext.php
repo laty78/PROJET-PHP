@@ -22,35 +22,19 @@ class FeatureContext implements Context, SnippetAcceptingContext
     public function __construct()
     {
     }
-
+    
     /**
-     * @When I click on :arg1
+     * @Given I am :arg1
      */
-    public function iClickOn($arg1)
+    public function iAm($arg1)
     {
         throw new PendingException();
     }
 
     /**
-     * @When I choose :arg1
+     * @When I enter a valid :arg1
      */
-    public function iChoose($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When I enter a :arg1
-     */
-    public function iEnterA($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then I get an error :arg1
-     */
-    public function iGetAnError($arg1)
+    public function iEnterAValid($arg1)
     {
         throw new PendingException();
     }
@@ -64,22 +48,6 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @When I enter an unvalid :arg1 or :arg2
-     */
-    public function iEnterAnUnvalidOr($arg1, $arg2)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When I enter a valid :arg1 or :arg2
-     */
-    public function iEnterAValidOr($arg1, $arg2)
-    {
-        throw new PendingException();
-    }
-
-    /**
      * @When I enter an unvalid :arg1
      */
     public function iEnterAnUnvalid($arg1)
@@ -88,9 +56,9 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @Given I enter a valid :arg1
+     * @Then I get an error
      */
-    public function iEnterAValid($arg1)
+    public function iGetAnError()
     {
         throw new PendingException();
     }
@@ -104,23 +72,23 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @Then I get an error
+     * @When I click on :arg1
      */
-    public function iGetAnError2()
+    public function iClickOn($arg1)
     {
         throw new PendingException();
     }
 
     /**
-     * @Given I am an unregistred visitor
+     * @Then I create a block
      */
-    public function iAmAnUnregistredVisitor()
+    public function iCreateABlock()
     {
         throw new PendingException();
     }
 
     /**
-     * @Given I enter a unvalid :arg1
+     * @When I enter a unvalid :arg1
      */
     public function iEnterAUnvalid($arg1)
     {
@@ -128,17 +96,89 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @Given I am a SU
+     * @Then I get an error :arg1
      */
-    public function iAmASu()
+    public function iGetAnError2($arg1)
     {
         throw new PendingException();
     }
 
     /**
-     * @When I enter a unused :arg1
+     * @Given I am  :arg1
      */
-    public function iEnterAUnused($arg1)
+    public function iAm2($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When the block exists
+     */
+    public function theBlockExists()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I update a block
+     */
+    public function iUpdateABlock()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When the block doesn't exist
+     */
+    public function theBlockDoesnTExist()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I get a question :arg1
+     */
+    public function iGetAQuestion($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I deleted the block
+     */
+    public function iDeletedTheBlock()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When I enter :arg1
+     */
+    public function iEnter($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I change the theme in black
+     */
+    public function iChangeTheThemeInBlack()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I change the theme in white
+     */
+    public function iChangeTheThemeInWhite()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I change the theme with this image
+     */
+    public function iChangeTheThemeWithThisImage()
     {
         throw new PendingException();
     }
@@ -152,25 +192,17 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @Then I create a admin
+     * @Then I create a SU
      */
-    public function iCreateAAdmin()
+    public function iCreateASu()
     {
         throw new PendingException();
     }
 
     /**
-     * @When I enter a used :arg1
+     * @When I enter an used :arg1
      */
-    public function iEnterAUsed($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When the admin exist
-     */
-    public function theAdminExist()
+    public function iEnterAnUsed($arg1)
     {
         throw new PendingException();
     }
@@ -184,25 +216,33 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @Then I updated an admin
+     * @When the modo exists
      */
-    public function iUpdatedAnAdmin()
-   {
-        throw new PendingException();
-    }
-
-    /**
-     * @When the admin doesn't exist
-     */
-    public function theAdminDoesnTExist()
+    public function theModoExists()
     {
         throw new PendingException();
     }
 
     /**
-     * @When the admin exists
+     * @Then I updated an SU
      */
-    public function theAdminExists()
+    public function iUpdatedAnSu()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When the modo doesn't exist
+     */
+    public function theModoDoesnTExist()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When the SU exists
+     */
+    public function theSuExists()
     {
         throw new PendingException();
     }
@@ -216,25 +256,153 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @Then the admin is deleted
+     * @Then the SU is deleted
      */
-    public function theAdminIsDeleted()
+    public function theSuIsDeleted()
     {
         throw new PendingException();
     }
 
     /**
-     * @Given I am SU
+     * @Then the SU keep on existing
      */
-    public function iAmSu()
+    public function theSuKeepOnExisting()
     {
         throw new PendingException();
     }
 
     /**
-     * @Then the admin keep on existing
+     * @When the SU doesn't exist
      */
-    public function theAdminKeepOnExisting()
+    public function theSuDoesnTExist()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I create a modo
+     */
+    public function iCreateAModo()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I updated an modo
+     */
+    public function iUpdatedAnModo()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then the modo is deleted
+     */
+    public function theModoIsDeleted()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then the modo keep on existing
+     */
+    public function theModoKeepOnExisting()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given I am an :arg1
+     */
+    public function iAmAn($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When Je saisi :arg1 dans le champ :arg2
+     */
+    public function jeSaisiDansLeChamp($arg1, $arg2)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then Je me connect à mon compte
+     */
+    public function jeMeConnectAMonCompte()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then Retour à l'accueil
+     */
+    public function retourALAccueil()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When Je clique sur :arg1
+     */
+    public function jeCliqueSur($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then Un nouveau post est créé dans la BDD
+     */
+    public function unNouveauPostEstCreeDansLaBdd()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then Mon nouveau post est présent
+     */
+    public function monNouveauPostEstPresent()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given I am a :arg1
+     */
+    public function iAmA($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When I select a :arg1
+     */
+    public function iSelectA($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then The block displays
+     */
+    public function theBlockDisplays()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When I filter via video
+     */
+    public function iFilterViaVideo()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I get video blocks
+     */
+    public function iGetVideoBlocks()
     {
         throw new PendingException();
     }
