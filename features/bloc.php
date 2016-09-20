@@ -1,10 +1,11 @@
 <?php 
     class bloc {
-        public $id;
-        public $titre;
-        public $date;
-        public $media_video;
-        public $media_image;
-        public $media_audio;
+        private $id;
+        private $title;
+        private $date;
+        private $media_video;
+        private $media_image;
+        private $media_audio;
+	    private $format;
     }
 ?>
