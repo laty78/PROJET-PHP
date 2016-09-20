@@ -21,29 +21,29 @@ class User {
         
     }
     
-    public function connect(){
+    public function connect() {
         $temp = DBSingleton::getInstance();
         $sql = "SELECT * FROM user WHERE pseudo = ?";
         $pdostatement = $temp->prepare($sql);
         $pdostatement->execute(array($this->pseudo));
         $tableau = $pdostatement->fetchAll(\PDO::FETCH_BOTH);
-        /*print_r($tableau);*/
-        foreach($tableau as $row) {
-            $bd_pseudo = $row['pseudo'];
-            $bd_pwd = $row['pwd'];
-        }
-        if($bd_pseudo === $this->pseudo){
-            if($bd_pwd === $this->psw){
+        if ($tableau != NULL) {
+            foreach($tableau as $row) {
+                $bd_pseudo = $row['pseudo'];
+                $bd_pwd = $row['pwd'];
+            }
+            if($bd_pwd === $this->psw) {
                 echo ':)';
                 return true;        
-            } else {
+            }
+            else {
                 echo ':(';
                 return false;
             }
-        } else {
-            echo 'Aucun pseudo...';
+        }
+        else {
+            echo "pseudo not known in the database"
         }
     }
-}
 
 ?>

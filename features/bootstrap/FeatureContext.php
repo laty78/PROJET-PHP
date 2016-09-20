@@ -28,7 +28,8 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iAm($arg1)
     {
-        throw new PendingException();
+        $user = new User('pseudo', 'pwd');
+        $user->connect();
     }
 
     /**
