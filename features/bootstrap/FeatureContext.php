@@ -21,12 +21,8 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iAmAn($arg1)
     {
-        $user = new User('chat0','felix');
+        $user = new User('chien','felix');
         $user->connect();
-        
-        /*$this->user->setPseudo("Name");
-        $this->user->setMdp("password");
-        $this->user->setRole($arg1);*/
         
     }
 

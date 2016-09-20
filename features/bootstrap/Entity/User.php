@@ -27,21 +27,20 @@ class User {
         $pdostatement = $temp->prepare($sql);
         $pdostatement->execute(array($this->pseudo));
         $tableau = $pdostatement->fetchAll(\PDO::FETCH_BOTH);
-        /*print_r($tableau);*/
-        foreach($tableau as $row) {
+        if (empty($tableau)) {
+            echo 'Ce pseudo n\'existe pas...';
+        } else {
+            foreach($tableau as $row) {
             $bd_pseudo = $row['pseudo'];
             $bd_pwd = $row['pwd'];
-        }
-        if($bd_pseudo === $this->pseudo){
+            }
             if($bd_pwd === $this->psw){
-                echo ':)';
+                echo 'On est bien connecté ! :)';
                 return true;        
             } else {
-                echo ':(';
+                echo 'Mauvais mot de passe... :(';
                 return false;
             }
-        } else {
-            echo 'Aucun pseudo...';
         }
     }
 }
