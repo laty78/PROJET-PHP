@@ -36,4 +36,4 @@ Feature: A visitor connect
     Scenario: A visitor forgot his password and enter an unvalid email
         Given I am "visitor"
         When I enter an unvalid "email"
-        Then I get an error
+        Then I get an error 
