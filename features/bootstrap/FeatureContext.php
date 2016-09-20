@@ -5,6 +5,7 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Behat\Tester\Exception\PendingException;
+use Entity\User;
 
 /**
  * Defines application features from the specific context.
@@ -28,7 +29,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iAm($arg1)
     {
-        $user = new User('pseudo', 'pwd');
+        $user = new User('chat', 'felix');
         $user->connect();
     }
 
@@ -313,14 +314,6 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @Given I am an :arg1
-     */
-    public function iAmAn($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
      * @When Je saisi :arg1 dans le champ :arg2
      */
     public function jeSaisiDansLeChamp($arg1, $arg2)
@@ -364,14 +357,6 @@ class FeatureContext implements Context, SnippetAcceptingContext
      * @Then Mon nouveau post est présent
      */
     public function monNouveauPostEstPresent()
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Given I am a :arg1
-     */
-    public function iAmA($arg1)
     {
         throw new PendingException();
     }
