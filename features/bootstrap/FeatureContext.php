@@ -2,72 +2,109 @@
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
+use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
-
+use Entity\User;
+use Entity\Bloc;
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext implements Context, SnippetAcceptingContext
 {
-    /**
-     * Initializes context.
-     *
-     * Every scenario gets its own context instance.
-     * You can also pass arbitrary arguments to the
-     * context constructor through behat.yml.
-     */
-    public function __construct()
-    {
-    }
+    private $bloc;
     
+        
     
- /**
-     * @Given I am a :arg1
+    /**
+     * @Given I am an :arg1
      */
-    public function iAmA($arg1)
-    {  
-        $this->user = new User(); 
+    public function iAmAn($arg1)
+    {
+        $pseudo = 'chat';
+        $pwd ='felix';
+        $email='mail@mail.com';
+        $user = new User();
+        $user->setPseudo($pseudo);
+        $user->setPsw($pwd);
+        $user->setEmail($email);
+        $user->connect();
+
+        
+        /*$this->user->setPseudo("Name");
+        $this->user->setMdp("password");
+        $this->user->setRole($arg1);*/
+        
     }
 
     /**
-     * @Given I click on a :arg1
+     * @When Je saisi :value dans le champ :field
      */
-    public function iClickOnA($arg1)
+    public function jeSaisiDansLeChamp($value, $field)
     {
-        throw new PendingException();
+     
+        switch($field){
+            case "title":
+                $this->bloc->setTitle($value);
+                break;
+            case "media_img":
+                $this->bloc->setMediaImage($value);
+                break;
+            case "format":
+                $this->bloc->setFormat($value);
+                break;
+        }
+        
     }
 
     /**
-     * @Then The block displays on the whole page
+     * @When Je clique sur :arg1
      */
-    public function theBlockDisplaysOnTheWholePage()
+    public function jeCliqueSur($arg1)
     {
-       
+        // Nothing to do. Only front.
     }
 
     /**
-     * @When I click on :arg1
+     * @Then Un nouveau post est créé dans la BDD
      */
-    public function iClickOn($arg1)
+    public function unNouveauPostEstCreeDansLaBdd()
     {
-        throw new PendingException();
+        $this->bloc->create();
     }
 
     /**
-     * @When I choose :arg1
+     * @Then Retour à l'accueil
      */
-    public function iChoose($arg1)
+    public function retourALAccueil()
     {
-        throw new PendingException();
+       // Nothing to do, only front
     }
 
     /**
-     * @Then I get video blocks
+     * @Then Mon nouveau post est présent
      */
-    public function iGetVideoBlocks()
+    public function monNouveauPostEstPresent()
     {
-        throw new PendingException();
+        if(count($this->bloc->select())!=1){
+            throw new Exception("Bloc not found");
+        }
     }
+    /**
+     * @Then Je me connect à mon compte
+     */
+    public function jeMeConnectAMonCompte()
+    {
+        
+
+    }
+    /**
+     * @When je créé un bloc
+     */
+    public function jeCreeUnBloc()
+    {
+        $this->bloc = new Bloc();
+    }
+
 
 }
