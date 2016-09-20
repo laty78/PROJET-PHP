@@ -393,3 +393,5 @@ class FeatureContext implements Context, SnippetAcceptingContext
         throw new PendingException();
     }
 }
+
+?>
