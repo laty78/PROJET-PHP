@@ -47,7 +47,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
             case "title":
                 $this->bloc->setTitle($value);
                 break;
-            case "media_img":
+            case "media_image":
                 $this->bloc->setMediaImage($value);
                 break;
             case "format":
@@ -55,6 +55,41 @@ class FeatureContext implements Context, SnippetAcceptingContext
                 break;
         }
         
+        switch($field){
+            case "title":
+                $this->bloc->setTitle($value);
+                break;
+            case "media_video":
+                $this->bloc->setMediaVideo($value);
+                break;
+            case "format":
+                $this->bloc->setFormat($value);
+                break;
+        }
+
+        switch($field){
+            case "title":
+                $this->bloc->setTitle($value);
+                break;
+            case "media_audio":
+                $this->bloc->setMediaAudio($value);
+                break;
+            case "format":
+                $this->bloc->setFormat($value);
+                break;
+        }
+
+        switch($field){
+            case "title":
+                $this->bloc->setTitle($value);
+                break;
+            case "media_image && media_audio":
+                $this->bloc->setMediaImage($value) && setMediaAudio($value);
+                break;
+            case "format":
+                $this->bloc->setFormat($value);
+                break;
+        }
     }
 
     /**
@@ -86,9 +121,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function monNouveauPostEstPresent()
     {
-        if(count($this->bloc->select())!=1){
-            throw new Exception("Bloc not found");
-        }
+        $this->bloc->select();
     }
     /**
      * @Then Je me connect à mon compte
