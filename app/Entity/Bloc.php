@@ -16,7 +16,13 @@ class Bloc {
     }
 
     public function setMediaImage($image){
-        $this->media_image=$image;
+        $this->media_image = $image;
+    }
+    public function setMediaVideo($video){
+        $this->media_video = $video;
+    }
+    public function setMediaAudio($audio){
+        $this->media_audio = $audio;
     }
     public function setDate($date){
         $this->date = $date;
@@ -42,19 +48,21 @@ class Bloc {
     }
     public function select(){
         $db = DBSingleton::getInstance();
-        $sql =  * FROM `bloc` WHERE `title` = 'Nom de l\'image';
+        $sql = "SELECT * FROM bloc WHERE title = 'Test'";
         $pdostatement = $db->prepare($sql);
         $pdostatement->execute(array($this->title));
+
         $tableau = $pdostatement->fetchAll(\PDO::FETCH_BOTH);
-        print_r($tableau);
-        foreach($tableau as $row) {
-            $bd_title = $row['title'];
-            if($bd_title ===  $this->title ){
-                echo'Poste est déjà présent';
+        $counter=0;
+        foreach ($tableau as $row) {
+            $bloc_title = $row["title"];
+            if ($bloc_title = "Test") {
+                $counter +=1;
+                echo "Le post existe bien";
+            } else {
+                echo "Le post est créer";
             }
-            else{
-                echo'Votre poste est crée';
-            }
+
         }
     }
 
