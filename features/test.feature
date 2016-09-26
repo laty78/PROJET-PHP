@@ -17,3 +17,14 @@ Scenario: Un admin créer un post pour envoyer une image de petite taille
   Then Un nouveau post est créé dans la BDD
     And Retour à l'accueil
     And Mon nouveau post est présent
+
+Scenario: Un admin créer un post pour envoyer une video
+  Given I am an "User"
+  When je créé un bloc
+    And Je saisi "Nom de la video" dans le champ "title"
+    And Je saisi "url de la video" dans le champ "media_video"
+    #And Je saisi "1" dans le champ "format"
+    And Je clique sur "Envoyer"
+  Then Un nouveau post est créé dans la BDD
+    And Retour à l'accueil
+    And Mon nouveau post est présent
