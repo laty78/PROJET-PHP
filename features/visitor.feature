@@ -10,8 +10,8 @@ Feature: A visitor visit the app
         When I filter via <type>
         Then I get <result> blocks
         
-    Examples:
-        | type  | result |
-        | video | video  |
-        | image | image  |
-        | sound | sound  |
+    # Examples:
+    #     | type  | result |
+    #     | video | video  |
+    #     | image | image  |
+    #     | sound | sound  |
