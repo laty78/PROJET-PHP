@@ -35,7 +35,7 @@ class FeatureContext implements Context, SnippetAcceptingContext {
      */
     public function iCreateASu() {
     	$user = new User("chat", "felix");
-			$user->suCreatesSu("white", "leaf", "white@leaf.com", 1);
+			$user->createUser("chien", "rufus", "chien@rufus.com", 1);
     }
 	
 		/**
@@ -43,7 +43,16 @@ class FeatureContext implements Context, SnippetAcceptingContext {
      */
     public function iUpdateASu() {
 			$user = new User("chat", "felix");
-			$user->suUpdatesSu("chien", "nawel", "heli", "nawel@heli", 2);
+			$user->updateUser("chien", "nawel", "heli", "nawel@heli", 2);
+    }
+	
+		/**
+     * @When I delete a SU
+     */
+    public function iDeleteASu()
+    {
+			$user = new User("chat", "felix");
+			$user->deleteUser("nawel");
     }
 
 }
