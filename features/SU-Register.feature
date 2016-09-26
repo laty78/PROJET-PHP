@@ -1,9 +1,14 @@
 Feature: SU create a SU
 
-#    Scenario: A SU registers an SU
-#        Given I am "SU"
-#        When I click on "add SU"
-#        And I enter an unused "username"
+    Scenario: A SU registers an SU
+        Given I am "SU"
+        When I create a SU
+				
+		Scenario: A SU update an SU
+			Given I am "SU"
+			When I update a SU
+			
+#				enter an unused "username"
 #        And I enter an unused "email"
 #        Then I create a SU
 #

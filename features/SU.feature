@@ -1,7 +1,7 @@
 Feature: A SU registers an modo
-    Display the possibilities
-    Of an SU registering an modo
-
+#    Display the possibilities
+#    Of an SU registering an modo
+#
 #    Scenario: A SU registers an modo
 #        Given I am "SU"
 #        When I click on "add modo"

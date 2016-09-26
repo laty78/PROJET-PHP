@@ -1,5 +1,5 @@
 Feature: A visitor visit the app
-
+#
 #    Scenario: A visitor clicks on a block
 #        Given I am a "visitor"
 #        When I select a "block"

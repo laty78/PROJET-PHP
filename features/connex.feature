@@ -1,7 +1,7 @@
 Feature: A visitor connect
-    Display the possibilities
-    Of a visitor trying to connect
-
+#    Display the possibilities
+#    Of a visitor trying to connect
+#
 #    Scenario: A visitor succeed to connect
 #        Given I am "visitor"
 #        When I enter a valid "email"

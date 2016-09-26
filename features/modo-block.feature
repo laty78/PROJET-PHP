@@ -1,5 +1,5 @@
 Feature: A moderator registers a block
-
+#
 #    Scenario: A moderator creates a block
 #        Given I am "moderator"
 #        When I click on "create block"

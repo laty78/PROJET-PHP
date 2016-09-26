@@ -1,5 +1,5 @@
 Feature: A moderator changes the theme
-
+#
 #    Scenario: A moderator changes the theme color in black
 #        Given I am "moderator"
 #        When I click on "theme"

@@ -19,7 +19,7 @@ class DBSingleton
         return self::$inst;
     }
     private function __construct(){
-     self::$inst = new \PDO('mysql:host=localhost;dbname=projet_php;charset=utf8', 'root', 'facesimplon');
+     self::$inst = new \PDO('mysql:host=localhost;dbname=projet_php;charset=utf8', 'projet', 'facesimplon');
     }
 
 }
