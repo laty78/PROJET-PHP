@@ -42,12 +42,15 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function jeSaisiDansLeChamp($value, $field)
     {
-     
+        echo $field;
         switch($field){
             case "title":
                 $this->bloc->setTitle($value);
                 break;
-            case "media_image":
+            case "media":
+                $this->bloc->setMedia($value);
+                break;
+            /*case "media_image":
                 $this->bloc->setMediaImage($value);
                 break;
             case "media_video":
@@ -55,7 +58,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
                 break;
             case "media_audio":
                 $this->bloc->setMediaAudio($value);
-                break;
+                break;*/
             case "format":
                 $this->bloc->setFormat($value);
                 break;
