@@ -47,10 +47,10 @@ class FeatureContext implements Context, SnippetAcceptingContext
             case "title":
                 $this->bloc->setTitle($value);
                 break;
-            case "media":
+            /*case "media":
                 $this->bloc->setMedia($value);
-                break;
-            /*case "media_image":
+                break;*/
+            case "media_image":
                 $this->bloc->setMediaImage($value);
                 break;
             case "media_video":
@@ -58,7 +58,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
                 break;
             case "media_audio":
                 $this->bloc->setMediaAudio($value);
-                break;*/
+                break;
             case "format":
                 $this->bloc->setFormat($value);
                 break;
