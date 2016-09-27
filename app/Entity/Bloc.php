@@ -14,6 +14,9 @@ class Bloc {
     public function setTitle($title){
         $this->title = $title;
     }
+    public function readId($id){
+        $this->id = $id;
+    }
     public function setMediaImage($image){
         $this->media_image = $image;
     }
@@ -113,7 +116,45 @@ class Bloc {
                 echo 'Post présent';
         }
     }
+    public function update(){
+        $db = DBSingleton::getInstance();
+        $sql="UPDATE bloc SET";
+        $update_entree=array("tatada");
+        $titre= $this->title;
+        $ide= "WHERE Id=".$this->id;
 
+         if(null!=($this->title)) {
+            $titre= $this->title;
+            array_push($update_entree, $titre);
+        }
+        if(is_null($this->date)){
+            $day= $this->date = date("Y-m-d");
+            array_push($update_entree, $day);
+        }
+        if(null!=($this->media_image)) {
+            $imag= $this->media_image;
+            array_push($update_entree, $imag);
+        }
+        if(null!=($this->media_video)) {
+            $vid= $this->media_video;
+            array_push($update_entree, $vid);
+        }
+        if(null!=($this->media_audio)) {
+            $aud= $this->media_audio;
+            echo $this->media_audio;
+            array_push($update_entree, $aud);
+        }
+        if(null!=($this->format)) {
+            $form= $this->format;
+            array_push($update_entree, $form);
+        }
+        print_r($update_entree);
+        $p= implode(',', $update_entree);
+        echo $p.'</br>';
+        $sqll = $sql.' '.$p;
+        echo 'valeur de sqll: '.$sqll;
+
+    }
 }
 
 ?>

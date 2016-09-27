@@ -148,5 +148,30 @@ class FeatureContext implements Context, SnippetAcceptingContext
         $this->bloc = new Bloc();
     }
 
+    /**
+     * @When je modifie le bloc
+     */
+    public function jeModifieLeBloc()
+    {
+        $this->bloc = new Bloc();
+        $this->bloc->update();
+    }
+
+    /**
+     * @When je modifie le champ :arg1
+     */
+    public function jeModifieLeChamp($arg1)
+    {
+        //throw new PendingException();
+    }
+
+    /**
+     * @Then le post a été modifié dans la BDD
+     */
+    public function lePostAEteModifieDansLaBdd()
+    {
+        //throw new PendingException();
+    }
+
 
 }

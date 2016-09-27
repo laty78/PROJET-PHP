@@ -51,3 +51,13 @@ Scenario: Un admin créer un post pour envoyer une image et un audio
   Then Un nouveau post est créé dans la BDD
     And Retour à l'accueil
     And Mon nouveau post est présent
+
+Scenario: Un admin met à jour un bloc de type image
+  Given I am an "User"
+  When je modifie le bloc
+    And je modifie le champ "titre"
+    And je modifie le champ "media_image"
+    And je modifie le champ "format"
+  Then le post a été modifié dans la BDD
+    And Retour à l'accueil
+    And Mon nouveau post est présent
