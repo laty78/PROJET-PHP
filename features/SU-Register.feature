@@ -1,13 +1,13 @@
 Feature: SU create a SU
 
-#    Scenario: A SU registers a SU
-#        Given I am "SU"
-#        When I create a SU
-#				
-#		Scenario: A SU update a SU
-#			Given I am "SU"
-#			When I update a SU
-#			
+    Scenario: A SU registers a SU
+        Given I am "SU"
+        When I create a SU
+				
+		Scenario: A SU update a SU
+			Given I am "SU"
+			When I update a SU
+			
 		Scenario: A SU delete a SU
 			Given I am "SU"
 			When I delete a SU

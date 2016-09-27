@@ -1,8 +1,16 @@
 Feature: A moderator registers a block
 #
-#    Scenario: A moderator creates a block
-#        Given I am "moderator"
-#        When I click on "create block"
+    Scenario: A moderator creates a block
+        Given I am "moderator"
+        When I create a block
+				
+		Scenario: A moderator updates a block
+			Given I am "moderator"
+			When I update a block
+			
+		Scenario: A moderator deletes a block
+			Given I am "moderator"
+			When I delete a block
 #        And I enter a valid "title"
 #        And I enter a valid "media"
 #        And I enter a valid "format"
