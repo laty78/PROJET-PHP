@@ -5,7 +5,6 @@ class Bloc {
     private $title;
     private $id;
     private $date;
-    /*private $media;*/
     private $media_image;
     private $media_video;
     private $media_audio;
@@ -15,11 +14,6 @@ class Bloc {
     public function setTitle($title){
         $this->title = $title;
     }
-
-    /*public function setMedia($media){
-        $this->media = $media;
-    }*/
-
     public function setMediaImage($image){
         $this->media_image = $image;
     }
@@ -44,33 +38,29 @@ class Bloc {
         /* INSERTION GENERIQUE */
         $params = array();
         $entree = "title, date, media_image, media_video, media_audio, format";
-        /*$valeur_entree= array("NULL");*/
         if(null!=($this->title)) {
             $titre= $this->title;
-            /*array_push($entree, "title");*/
             array_push($params, $titre);
-            /*array_push($valeur_entree, "?");*/
         }
         if(is_null($this->date)){
             $day= $this->date = date("Y-m-d");
-            /*array_push($entree, "date");*/
+
             array_push($params, $day);
-            /*array_push($valeur_entree, "?");*/
+
         }
         if(null!=($this->media_image)) {
             $imag= $this->media_image;
-            /*array_push($entree, "media_image");*/
+
             array_push($params, $imag);
-            /*array_push($valeur_entree, "?");*/
+
         }
         if(null==($this->media_image)){
             array_push($params,"null");
         }
         if(null!=($this->media_video)) {
             $vid= $this->media_video;
-            /*array_push($entree, "media_video");*/
             array_push($params, $vid);
-            /*array_push($valeur_entree, "?");*/
+
         }
         if(null==($this->media_video)){
             array_push($params,"null");
@@ -78,44 +68,21 @@ class Bloc {
         if(null!=($this->media_audio)) {
             $aud= $this->media_audio;
             echo $this->media_audio;
-            /*array_push($entree, "media_audio");*/
             array_push($params, $aud);
-            /*array_push($valeur_entree, "?");*/
         }
         if(null==($this->media_audio)){
             array_push($params,"null");
         }
         if(null!=($this->format)) {
             $form= $this->format;
-            /*array_push($entree, "format");*/
             array_push($params, $form);
-            /*array_push($valeur_entree, "?");*/
         }
-        //echo $valeur_entree;
-        /*CONVERTIR UN TABLEAU EN STRING*/
+
         print_r($params);
-        /*$str = implode(",", $entree);*/
-        /*$str_val = implode(",", $valeur_entree);*/
-        /*echo $str;*/
             $sq= "INSERT INTO bloc (id,";
-            /*$entree= "title, date, media., format";*/
+
             $valeur_entree= "NULL,?,?,?,?,?,?";
-
-
-            /*$tab= array($this->title, $this->date, $this->media_image, $this->media_video, $this->media_audio, $this->format);*/
             $sql= $sq.''.$entree.') VALUES ('.$valeur_entree.')';
-            /* case"media_image":*/
-            /*    $sql = "INSERT INTO bloc (id, title, date, media_image, format) VALUES (NULL, ?, ?, ?, ?);";*/
-                /*break;
-            case"media_image && media_audio":
-                $sql = "INSERT INTO bloc (id, title, date, media_image, media_audio, format) VALUES (NULL, ?, ?, ?, ?, ?);";
-                break;
-            case"media_video":
-                $sql = "INSERT INTO bloc (id, title, date, media_video, format) VALUES (NULL, ?, ?, ?, ?);";
-                break;
-            case"media_audio":
-                $sql = "INSERT INTO bloc (id, title, date, media_audio, format) VALUES (NULL, ?, ?, ?, ?);";
-                break;*/
         echo $sql;
         print_r($params);
         $statement = $db->prepare($sql);
@@ -125,21 +92,25 @@ class Bloc {
     }
     public function select(){
         $db = DBSingleton::getInstance();
-        $sql = "SELECT * FROM bloc WHERE title = 'Test'";
+        $sq = "SELECT * FROM bloc WHERE title =";
+        $string_title= $this->title;
+        $sql= $sq.'\''.$string_title.'\'';
+        echo $sql;
         $pdostatement = $db->prepare($sql);
         $pdostatement->execute(array($this->title));
         //FETCH_CLASS pour retouner proprement sans le jeu de résultat.
-        $tableau = $pdostatement->fetchAll(\PDO::FETCH_CLASS);
+        $tableau = $pdostatement->fetchAll(\PDO::FETCH_BOTH);
         $counter=0;
-        print_r($tableau);
-        foreach ($tableau as $row) {
-            $bloc_title = $row["title"];
-            if ($bloc_title = "Test") {
-                $counter +=1;
-                echo "Le post existe bien";
-            } else {
-                echo "Le post est créer";
-            }
+        print_r($pdostatement);
+
+        foreach($tableau as $row) {
+            $bdtitle = $row['title'];
+        }
+        if($bdtitle = ($string_title)){
+            echo 'Le post '. $this->title . 'est dejà présent';
+        }
+        else {
+                echo 'Post présent';
         }
     }
 
